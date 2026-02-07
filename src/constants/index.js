@@ -94,11 +94,6 @@ export const myProjects = [
     duration: 'Oct 2025 – Present',
     href: 'https://infocascade.onrender.com/',
     logo: 'https://infocascade.onrender.com/images/Infocascade.png',
-            { id: 4, name: 'Python', path: 'https://www.python.org/static/community_logos/python-logo.png' },
-            { id: 5, name: 'scikit-learn', path: 'https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png' },
-            { id: 6, name: 'ML', path: 'https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png' },
-            { id: 7, name: 'Gen AI', path: 'https://img.icons8.com/ios-filled/50/000000/robot-2.png' },
-            { id: 8, name: 'RAG', path: 'https://img.icons8.com/ios-filled/50/000000/database.png' },
     spotlight: '/assets/spotlight2.png',
     logoStyle: {
       backgroundColor: '#071527',
@@ -118,10 +113,6 @@ export const myProjects = [
     subdesc:
       'ML analyzes recent typing patterns to predict the next 5 likely mistakes, helping users improve accuracy proactively. Group mode, enhanced UI, and scalable deployment make training and competing seamless.',
     duration: 'Nov 2025 – Feb 2026',
-            { id: 3, name: 'Python', path: 'https://www.python.org/static/community_logos/python-logo.png' },
-            { id: 4, name: 'ML', path: 'https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png' },
-            { id: 5, name: 'Gen AI', path: 'https://img.icons8.com/ios-filled/50/000000/robot-2.png' },
-            { id: 6, name: 'RAG', path: 'https://img.icons8.com/ios-filled/50/000000/database.png' },
     href: 'https://typerhouse.tech/',
     logo: 'https://www.typerhouse.tech/_next/image?url=%2Flogo%2FLogo.png&w=32&q=75',
     texture: '/textures/project/project1.mp4',
@@ -171,11 +162,6 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
     reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [5, 4, 0] : [12, 3, 0],
     ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 10, 0] : isTablet ? [-12, 10, 0] : [-24, 10, 0],
     targetPosition: isSmall ? [-5, -10, -10] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -13, -10],
-            { id: 5, name: 'Python', path: 'https://www.python.org/static/community_logos/python-logo.png' },
-            { id: 6, name: 'scikit-learn', path: 'https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png' },
-            { id: 7, name: 'ML', path: 'https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png' },
-            { id: 8, name: 'Gen AI', path: 'https://img.icons8.com/ios-filled/50/000000/robot-2.png' },
-            { id: 9, name: 'RAG', path: 'https://img.icons8.com/ios-filled/50/000000/database.png' },
   };
 };
 
