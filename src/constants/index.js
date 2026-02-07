@@ -16,6 +16,18 @@ export const navLinks = [
   },
   
 ];
+ // Technology icon paths for use in project
+  export const techIcons = {
+    mongodb: 'assets/icons/mongodb.png',
+    postgresql: 'assets/icons/postgresql.png',
+    python: 'assets/icons/python.png',
+    scikitlearn: 'assets/icons/scikit-learn.png',
+    nextjs: 'assets/icons/nextjs.png',
+    docker: 'assets/icons/docker.png',
+    reactthreefiber: 'assets/icons/react-three-fiber.png',
+    react: 'assets/icons/react.png',
+    tailwind: 'assets/icons/tailwind.png',
+  };
 
 export const clientReviews = [
   {
@@ -53,109 +65,102 @@ export const clientReviews = [
 ];
 
 export const myProjects = [
- {
-  title: 'TyperHouse',
-  desc: 'TyperHouse is a real-time multiplayer typing game that allows users to join rooms and compete in live typing tests. Users can see each other’s typing speed (WPM) live, get immediate feedback on mistakes, and view a graphical result at the end of the game. Built with Next.js App Router and Prisma.',
-  subdesc:
-    'The game features room creation, join-code sharing, live player tracking, automatic test start, real-time WPM updates, word error highlights, and a detailed result graph. Auth is handled via NextAuth OAuth, and the game UI is built using ShadCN and Tailwind CSS.',
-  href: 'https://typerhouse28.vercel.app/',
-  logo: 'https://typer-house28-oi89.vercel.app/_next/image?url=%2Flogo%2FLogo.png&w=32&q=75',
-  logoStyle: {
-    backgroundColor: '#121212',
-    border: '0.2px solid #1f1f1f',
-    boxShadow: '0px 0px 60px 0px #4f46e5',
-  },
-  spotlight: '/assets/spotlight2.png',
-  tags: [
-    {
-      id: 1,
-      name: 'Next.js',
-      path: 'https://img.icons8.com/fluent-systems-filled/512/EBEBEB/nextjs.png',
-    },
-    {
-      id: 2,
-      name: 'Prisma',
-      path: 'https://i.pinimg.com/736x/39/b2/e4/39b2e4ad77c23a2c11e5950a7dfa2aec.jpg',
-    },
-    {
-      id: 3,
-      name: 'MongoDB',
-      path: 'https://images.seeklogo.com/logo-png/44/2/mongodb-logo-png_seeklogo-444844.png',
-    }, {
-        id: 4,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-    },
-     {
-        id: 5,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-  
-  ],
-},
   {
-      title: "Let's Travel",
-      desc: "Listing of Top 10 Hotels, Agencies, DMCs, and Influencers in any state or country around the world. Search filter provides efficient and fast results on the same page. Hotels, Agencies, DMCs, and Influencers can register themselves on the website and access a dashboard to: Manage their data, Upload photos and videos, Add different tags, Include previous client and employee data, Promote their business worldwide. An Admin Dashboard is available to manage the priority of Hotels, Agencies, DMCs, and Influencers. A Helpdesk is available on both the user and admin dashboards.",  
-    href: 'https://lets-travel-kappa.vercel.app/',
-    texture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZgVTa3MSFUi_bau9PL4Ecb3z-yuKkcPCzQQ&shttps://t3.ftcdn.net/jpg/07/02/29/64/360_F_702296476_RndsGSoSJQhIDUYt4ZeC9KbO6lewBfk2.jpghttps://t3.ftcdn.net/jpg/07/02/29/64/360_F_702296476_RndsGSoSJQhIDUYt4ZeC9KbO6lewBfk2.jpg',
-    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZgVTa3MSFUi_bau9PL4Ecb3z-yuKkcPCzQQ&shttps://t3.ftcdn.net/jpg/07/02/29/64/360_F_702296476_RndsGSoSJQhIDUYt4ZeC9KbO6lewBfk2.jpghttps://t3.ftcdn.net/jpg/07/02/29/64/360_F_702296476_RndsGSoSJQhIDUYt4ZeC9KbO6lewBfk2.jpg',
-    logoStyle: {
-      backgroundColor: '#13202F',
-      border: '0.2px solid #17293E',
-      boxShadow: '0px 0px 60px 0px #2F6DB54D',
-    },
+    title: 'Training and Placement (TNP) Website',
+    desc: 'The official Training and Placement website centralizes all placement activities—company visits, drives, eligibility, schedules, and results—providing students with real-time updates and seamless registration.',
+    subdesc:
+      'As part of the TNP team I maintained and managed the site for 5,000+ students, ensuring timely, accurate information flow. Authorized coordinators can securely post and update notices while students register for drives and view announcements via a streamlined interface that improves transparency and communication.',
+    duration: 'Nov 2025 – Present',
+    href: 'https://www.tnpgndec.com/',
+    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9J13lb7mhmCzcO02FMQElQnvgvAsHkDYpTg&s',
     spotlight: '/assets/spotlight2.png',
+    logoStyle: {
+      backgroundColor: '#0B1B2B',
+      border: '0.2px solid #122530',
+      boxShadow: '0px 0px 40px 0px #1E90FF33',
+    },
     tags: [
-      {
-        id: 1,
-        name: 'Next JS ',
-        path: 'https://img.icons8.com/fluent-systems-filled/512/EBEBEB/nextjs.png',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
+      { id: 1, name: 'React', path: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg' },
+      { id: 2, name: 'Node.js', path: 'https://cdn.iconscout.com/icon/premium/png-256-thumb/nodejs-icon-svg-download-png-9632853.png' },
+      { id: 3, name: 'MongoDB', path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s' },
      
     ],
   },
- 
   {
-    title: 'Quiz Application with Auth',
-    desc: "The application utilizes OTP-based authentication to ensure secure user login and protect critical actions like adding or deleting admin accounts. It features an interactive and educational quiz system that includes score tracking to enhance user engagement. Administrators have access to tools for quiz management as well as detailed user activity reports, providing insights and control.",
+    title: 'InfoCascade',
+    desc: 'A centralized digital notice board for GNDEC delivering real-time academic and institutional updates—exams, results, fees, events, and official announcements.',
     subdesc:
-      " The user interface is designed with an intuitive GUI built using Java Swing and AWT, making it easy to navigate. To further support users, a Help button is included, offering instructional videos that guide them through the application's features and functionality.",
-    href: 'https://github.com/Kiranjeet28/Quiz-application-with-Authentication-',
+      'Built to scale with an active user base of 800+ students, InfoCascade ensures critical notices reach the campus reliably. The platform focuses on a simple, user-friendly experience for both admins and students.',
+    duration: 'Oct 2025 – Present',
+    href: 'https://infocascade.onrender.com/',
+    logo: 'https://infocascade.onrender.com/images/Infocascade.png',
+            { id: 4, name: 'Python', path: 'https://www.python.org/static/community_logos/python-logo.png' },
+            { id: 5, name: 'scikit-learn', path: 'https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png' },
+            { id: 6, name: 'ML', path: 'https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png' },
+            { id: 7, name: 'Gen AI', path: 'https://img.icons8.com/ios-filled/50/000000/robot-2.png' },
+            { id: 8, name: 'RAG', path: 'https://img.icons8.com/ios-filled/50/000000/database.png' },
+    spotlight: '/assets/spotlight2.png',
+    logoStyle: {
+      backgroundColor: '#071527',
+      border: '0.2px solid #0E2A3B',
+      boxShadow: '0px 0px 40px 0px #00B7FF33',
+    },
+    tags: [
+      { id: 1, name: 'Next.js', path: 'https://files.raycast.com/4l8sj9rclkbbd6swwq6s1cuidn6b' },
+      { id: 2, name: 'TailwindCSS', path: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
+        { id: 3, name: 'MongoDB', path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s' },
+   
+    ],
+  },
+  {
+    title: 'TyperHouse 0.2 (Phase 2)',
+    desc: 'TyperHouse 0.2 introduces ML-powered typing insights, predictive mistake recommendations, and a refreshed domain/UI at typerhouse.tech.',
+    subdesc:
+      'ML analyzes recent typing patterns to predict the next 5 likely mistakes, helping users improve accuracy proactively. Group mode, enhanced UI, and scalable deployment make training and competing seamless.',
+    duration: 'Nov 2025 – Feb 2026',
+            { id: 3, name: 'Python', path: 'https://www.python.org/static/community_logos/python-logo.png' },
+            { id: 4, name: 'ML', path: 'https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png' },
+            { id: 5, name: 'Gen AI', path: 'https://img.icons8.com/ios-filled/50/000000/robot-2.png' },
+            { id: 6, name: 'RAG', path: 'https://img.icons8.com/ios-filled/50/000000/database.png' },
+    href: 'https://typerhouse.tech/',
+    logo: 'https://www.typerhouse.tech/_next/image?url=%2Flogo%2FLogo.png&w=32&q=75',
+    texture: '/textures/project/project1.mp4',
+     spotlight: '/assets/spotlight2.png',
+    logoStyle: {
+      backgroundColor: '#071527',
+      border: '0.2px solid #0E2A3B',
+      boxShadow: '0px 0px 40px 0px #00B7FF33',
+    },
+    tags: [
+      { id: 1, name: 'Next.js', path: 'https://files.raycast.com/4l8sj9rclkbbd6swwq6s1cuidn6b' },
+      { id: 2, name: 'React Three Fiber', path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlGmKtrnxElpqw3AExKXPWWBulcwjlvDJa1Q&s' },
+      { id: 3, name: 'MongoDB', path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s' },
+      { id: 4, name: 'Python (ML)', path: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1280px-Python-logo-notext.svg.png' },
+      { id: 5, name: 'Docker', path: 'https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png' },
+    ],
+  },
+  {
+    title: 'TyperHouse (Phase 1)',
+    desc: 'First live phase of TyperHouse: a full-stack real-time multiplayer typing game with room creation, Google auth, live WPM tracking, and auto-start when players join.',
+    subdesc:
+      'Core features include Google authentication (NextAuth), room creation and join codes, dynamic paragraph generation, real-time WPM updates, and visual feedback for incorrect words.',
+    duration: 'Jun 2025 – Oct 2025',
+    href: 'https://typerhouse.tech',
+    logo: 'https://www.typerhouse.tech/_next/image?url=%2Flogo%2FLogo.png&w=32&q=75',
     texture: '/textures/project/project2.mp4',
-    logo: 'https://static.vecteezy.com/system/resources/previews/007/343/533/original/yellow-quiz-time-banner-with-comic-style-background-suitable-for-use-for-promotional-designs-vector.jpg',
+    spotlight: '/assets/spotlight2.png',
     logoStyle: {
       backgroundColor: '#0E1F38',
       border: '0.2px solid #0E2D58',
       boxShadow: '0px 0px 60px 0px #2F67B64D',
     },
-    spotlight: '/assets/spotlight4.png',
     tags: [
-      {
-        id: 1,
-        name: 'Java',
-        path: 'https://nerdysoft.com/wp-content/uploads/2021/11/java-14-1.svg',
-      },
-      {
-        id: 2,
-        name: 'MySQL',
-        path: 'https://www.ovhcloud.com/sites/default/files/styles/large_screens_1x/public/2021-09/ECX-1909_Hero_MySQL_600x400%402x-1.png',
-      },
-    
-   
+     { id: 1, name: 'Next.js', path: 'https://files.raycast.com/4l8sj9rclkbbd6swwq6s1cuidn6b' },
+      { id: 2, name: 'NextAuth', path: 'https://next-auth.js.org/img/logo/logo-sm.png' },
+      { id: 3, name: 'Socket.IO', path: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg' },
+      { id: 4, name: 'TailwindCSS', path: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
     ],
   },
-  
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
@@ -166,6 +171,11 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
     reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [5, 4, 0] : [12, 3, 0],
     ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 10, 0] : isTablet ? [-12, 10, 0] : [-24, 10, 0],
     targetPosition: isSmall ? [-5, -10, -10] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -13, -10],
+            { id: 5, name: 'Python', path: 'https://www.python.org/static/community_logos/python-logo.png' },
+            { id: 6, name: 'scikit-learn', path: 'https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png' },
+            { id: 7, name: 'ML', path: 'https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png' },
+            { id: 8, name: 'Gen AI', path: 'https://img.icons8.com/ios-filled/50/000000/robot-2.png' },
+            { id: 9, name: 'RAG', path: 'https://img.icons8.com/ios-filled/50/000000/database.png' },
   };
 };
 
@@ -207,3 +217,5 @@ export const workExperiences = [
     animation: 'salute',
   },
 ];
+
+ 

@@ -37,8 +37,7 @@ const About = () => {
                         <div>
                             <p className="grid-headtext">Hi, I’m Kiranjeet Kour</p>
                             <p className="grid-subtext">
-                                With 2 years of experience, I have honed my skills in both frontend and backend dev, creating dynamic
-                                and responsive websites.
+                                With 4 years of experience, I specialize as a Software Engineer focusing on frontend and backend development, deployment, and AI/ML solutions.
                             </p>
                         </div>
                     </div>
@@ -51,8 +50,7 @@ const About = () => {
                         <div>
                             <p className="grid-headtext">Tech Stack</p>
                             <p className="grid-subtext">
-                                I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable
-                                applications
+                                I work across frontend and backend stacks, deployment pipelines, and AI/ML frameworks to build scalable, production-ready systems.
                             </p>
                         </div>
                     </div>
@@ -75,7 +73,7 @@ const About = () => {
                         </div>
                         <div>
                             <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
-                            <p className="grid-subtext">I&apos;m based in Ludhiana, Croatia and open to remote work worldwide.</p>
+                            <p className="grid-subtext">I&apos;m based in India and open to remote work worldwide.</p>
                             <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
                         </div>
                     </div>
@@ -99,10 +97,9 @@ const About = () => {
 
                         </Canvas>
                         <div>
-                            <p className="grid-headtext">My Passion for Coding</p>
+                            <p className="grid-headtext">My Passion for Software Engineering</p>
                             <p className="grid-subtext">
-                                I love solving problems and building things through code. Programming isn&apos;t just my
-                                profession—it&apos;s my passion. I enjoy exploring new technologies, and enhancing my skills.
+                                I love solving problems, building production systems, and applying AI/ML to create intelligent features. Software engineering isn&apos;t just my profession—it&apos;s my passion.
                             </p>
                         </div>
                     </div>
@@ -110,20 +107,8 @@ const About = () => {
 
                 <div className="mx-auto xl:col-span-1 xl:row-span-2">
                     <div className="grid-container">
-                            <div className="relative flex items-center gap-4">
-                                {options.map((num, index) => (
-                                    <button
-                                        key={num + '-' + index}
-                                        className={`relative flex items-center justify-center w-12 h-12 text-gray-400 bg-gray-800 rounded-full transition-all duration-300 
-              ${selected === num ? "w-16 h-20 text-white animate-pulse bg-gray-800 border-2 border-[#00FFF1] animate-border-pulse" : "hover:text-white hover:bg-gray-700"}            `}
-                                        onClick={() => setSelected(num)}
-                                    >
-                                        {num}
-                                    </button>
-                                ))}
-                                ))}
-                            </div>
-                        {/* <div className="space-y-3">
+                           
+                         <div className="space-y-3">
                             <p className="grid-subtext text-center">Contact me</p>
                             <div className="copy-container" onClick={handleCopy}>
                                 <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
@@ -145,7 +130,7 @@ const About = () => {
                                 </a>
                             </div>
                           
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </div>

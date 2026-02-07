@@ -67,15 +67,37 @@ export function OrbitingSkills() {
         <Icons.react />
       </OrbitingCircles>
       <OrbitingCircles iconSize={35} radius={70} reverse speed={2}>
-        <Icons.java/>
-        <Icons.cpp/>
+        <Icons.java />
+        <Icons.cpp />
         <Icons.c />
+      </OrbitingCircles>
+      <OrbitingCircles iconSize={38} radius={200} speed={0.7}>
+        <Icons.python />
+        <Icons.scikitlearn />
+        <Icons.ml />
+        <Icons.genai />
+        <Icons.rag />
       </OrbitingCircles>
     </div>
   );
 }
 
 const Icons = {
+  python: () => (
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1280px-Python-logo-notext.svg.png" alt="Python" style={{width: '100%', height: '100%'}} />
+  ),
+  scikitlearn: () => (
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit-learn" style={{width: '100%', height: '100%'}} />
+  ),
+  ml: () => (
+    <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/2/pytorch-icon-ax2dnmm914kpyknh6o5tp.png/pytorch-icon-j3qqs6v1ydhsa6rqyquab.png?_a=DATAiZAAZAA0" alt="ML" style={{width: '100%', height: '100%'}} />
+  ),
+  genai: () => (
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/960px-Postgresql_elephant.svg.png" alt="postgresql" style={{width: '100%', height: '100%'}} />
+  ),
+  rag: () => (
+    <img src="https://cdn.iconscout.com/icon/free/png-256/free-mongodb-logo-icon-svg-download-png-3030245.png" alt="mongodb" style={{width: '100%', height: '100%'}} />
+  ),
   typescript: () => (
     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
 <rect width="36" height="36" x="6" y="6" fill="#1976d2"></rect><polygon fill="#fff" points="27.49,22 14.227,22 14.227,25.264 18.984,25.264 18.984,40 22.753,40 22.753,25.264 27.49,25.264"></polygon><path fill="#fff" d="M39.194,26.084c0,0-1.787-1.192-3.807-1.192s-2.747,0.96-2.747,1.986 c0,2.648,7.381,2.383,7.381,7.712c0,8.209-11.254,4.568-11.254,4.568V35.22c0,0,2.152,1.622,4.733,1.622s2.483-1.688,2.483-1.92 c0-2.449-7.315-2.449-7.315-7.878c0-7.381,10.658-4.469,10.658-4.469L39.194,26.084z"></path>
