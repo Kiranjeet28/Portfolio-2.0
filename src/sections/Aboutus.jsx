@@ -115,20 +115,22 @@ const About = () => {
                                 <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">Kiranjeetkour@gmail.com</p>
                             </div>
 
-                            <div className="flex flex-col gap-2 mt-10">
-                                <a href="/assets/Resume.pdf" download className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                                    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                                        Resume
-                                    </span>
-                                </a>
-                                <a href="/assets/CV.pdf" download className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                                    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                                        CV
-                                    </span>
-                                </a>
-                            </div>
+                            <div className="flex flex-col md:flex-row gap-6 mt-10 items-center justify-center">
+      <a href="/assets/Resume.pdf" download className="group relative inline-flex h-14 w-48 overflow-hidden rounded-full p-[2px] shadow-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-indigo-900 via-indigo-700 to-purple-600 px-6 py-2 text-lg font-semibold text-white backdrop-blur-3xl group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-indigo-900">
+          <svg className="mr-2 w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" /></svg>
+          Resume
+        </span>
+      </a>
+      <a href="/assets/CV.pdf" download className="group relative inline-flex h-14 w-48 overflow-hidden rounded-full p-[2px] shadow-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-purple-600 via-indigo-700 to-indigo-900 px-6 py-2 text-lg font-semibold text-white backdrop-blur-3xl group-hover:bg-gradient-to-r group-hover:from-indigo-900 group-hover:to-purple-600">
+          <svg className="mr-2 w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" /></svg>
+          CV
+        </span>
+      </a>
+    </div>
                           
                         </div>
                     </div>
