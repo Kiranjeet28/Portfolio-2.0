@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiranjeet Kour CV</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 20px; color: #222; background: linear-gradient(135deg, #e0e7ff 0%, #f8f9fa 100%); }
+    .container { max-width: 700px; margin: auto; background: #fff; box-shadow: 0 4px 24px rgba(60,90,150,0.12); border-radius: 18px; padding: 36px; }
+    .header { text-align: left; margin-bottom: 32px; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0; }
+    .name { font-size: 2.6em; font-weight: 700; color: #2c3e50; margin-bottom: 10px; text-align: left; letter-spacing: 1.2px; }
+    .contact { font-size: 1.18em; color: #555; margin-bottom: 0; text-align: left; }
+    .contact a { color: #2980b9; text-decoration: none; font-weight: 600; }
+    .section { margin-bottom: 28px; }
+    .cv-section-title { font-size: 1.32em; font-weight: 700; color: #2980b9; margin-bottom: 12px; border-bottom: 1px solid #e0e0e0; padding-bottom: 3px; letter-spacing: 0.7px; text-transform: uppercase; }
+    .cv-label { font-weight: 600; color: #555; margin-right: 6px; }
+    .cv-list { margin-bottom: 12px; }
+    .skills-list, .projects-list, .work-list, .edu-list, .training-list, .lang-list, .soft-list { list-style: none; padding: 0; }
+    .skills-list li, .projects-list li, .work-list li, .edu-list li, .training-list li, .lang-list li, .soft-list li { margin-bottom: 10px; font-size: 1.08em; }
+    .work-list strong, .projects-list strong, .edu-list strong { color: #2c3e50; }
+    .project-link { color: #2980b9; text-decoration: underline; font-weight: 600; }
+    .summary { font-size: 1.18em; color: #444; margin-bottom: 16px; line-height: 1.6; background: #f3f6fd; border-left: 4px solid #2980b9; padding: 10px 18px; border-radius: 8px; }
+    .tech-stack { font-size: 1.04em; color: #555; margin-top: 3px; }
+    .project-name { font-size: 1.18em; color: #1a237e; font-weight: 600; }
+    .work-desc { font-size: 1.04em; color: #444; margin-left: 20px; margin-bottom: 6px; background: #f3f6fd; border-left: 4px solid #2980b9; padding: 8px 16px; border-radius: 8px; }
+    .lang-list li, .soft-list li { display: inline-block; background: #e3eaff; color: #2c3e50; border-radius: 8px; padding: 5px 16px; margin-right: 10px; font-size: 1.08em; font-weight: 600; }
+    .edu-list li { font-size: 1.08em; color: #1a237e; font-weight: 500; background: #f8f9fa; border-left: 4px solid #2980b9; padding: 8px 16px; border-radius: 8px; margin-bottom: 10px; }
+    .training-list li { font-size: 1.06em; color: #222; background: #e0e7ff; border-left: 4px solid #2980b9; padding: 7px 14px; border-radius: 8px; margin-bottom: 8px; }
+    @media print {
+      body { margin: 0; background: #fff; }
+      .container { box-shadow: none; border-radius: 0; padding: 16px; }
+      .lang-list li, .soft-list li { background: #e0e0e0; color: #222; }
+    }
+    .skills-grid {
+      display: flex;
+      gap: 24px;
+      margin-top: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .skill-block {
+      background: #e3eaff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(60,90,150,0.08);
+      padding: 18px 22px;
+      min-width: 180px;
+      flex: 1 1 220px;
+    }
+    .skill-title {
+      font-size: 1.18em;
+      font-weight: 700;
+      color: #2980b9;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    .skill-block ul {
+      list-style: none;
+      padding: 0;
+    }
+    .skill-block li {
+      font-size: 1.06em;
+      color: #2c3e50;
+      margin-bottom: 6px;
+      font-weight: 500;
+      background: #f8f9fa;
+      border-radius: 6px;
+      padding: 4px 10px;
+      display: inline-block;
+    }
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 12px;
+    }
+    .project-card {
+      background: #f3f6fd;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(60,90,150,0.10);
+      padding: 20px 24px;
+      min-width: 220px;
+      flex: 1 1 320px;
+      margin-bottom: 8px;
+      border-left: 5px solid #2980b9;
+    }
+    .project-name {
+      font-size: 1.22em;
+      font-weight: 700;
+      color: #1a237e;
+      margin-bottom: 6px;
+    }
+    .project-duration {
+      font-size: 1.06em;
+      color: #2980b9;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .project-link {
+      color: #2980b9;
+      text-decoration: underline;
+      font-weight: 600;
+      font-size: 1.06em;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .features-title {
+      font-size: 1.08em;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 4px;
+    }
+    .project-features ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .project-features li {
+      font-size: 1.04em;
+      color: #444;
+      margin-bottom: 6px;
+      list-style: disc;
+    }
+    .tech-stack {
+      font-size: 1.04em;
+      color: #555;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="name">Kiranjeet Kour</div>
+      <div class="contact">
+        kiranjeetkour144@gmail.com &nbsp;|&nbsp; +91 7006111726 &nbsp;|&nbsp;
+        <a href="https://www.linkedin.com/in/kiranjeet-kour-3823ba268/">LinkedIn</a> &nbsp;|&nbsp;
+        <a href="https://github.com/kiranjeet28">GitHub</a> &nbsp;|&nbsp;
+        <a href="https://portfolokiranjeet28.vercel.app/">Portfolio</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="cv-section-title">Profile Summary</div>
+      <div class="summary">Results-driven full-stack software engineer with proven expertise in designing, developing, and deploying scalable web applications and AI-powered systems. Adept at collaborating across frontend, backend, and machine learning workflows to deliver robust, high-performance solutions. Experienced in leading projects from concept to production, optimizing operational efficiency, and driving innovation in fast-paced environments.</div>
+    </div>
+
+    <div class="section">
+      <div class="cv-section-title">Technical Skills</div>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <div class="skill-title">Web Development</div>
+          <ul>
+            <li>Node.js</li>
+            <li>React</li>
+            <li>Next.js</li>
+            <li>Prisma</li>
+            <li>MongoDB</li>
+            <li>PostgreSQL</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+        <div class="skill-block">
+          <div class="skill-title">App Development</div>
+          <ul>
+            <li>React Native</li>
+            <li>Node.js</li>
+            <li>MongoDB</li>
+            <li>PostgreSQL</li>
+          </ul>
+        </div>
+        <div class="skill-block">
+          <div class="skill-title">AI & ML</div>
+          <ul>
+            <li>Python</li>
+            <li>Scikit-learn</li>
+            <li>Generative AI (RAG)</li>
+            <li>Model Fine-tuning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="cv-section-title">Languages</div>
+      <ul class="lang-list cv-list">
+        <li>English</li>
+        <li>Punjabi</li>
+        <li>Hindi</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="cv-section-title">Soft Skills</div>
+      <ul class="soft-list cv-list">
+        <li>Team Leadership</li>
+        <li>Communication</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="cv-section-title">Education</div>
+      <ul class="edu-list cv-list">
+        <li>10th – Percentage 91% from Guru Harkrishan Public School</li>
+        <li>12th – Percentage 70% from NIOS</li>
+        <li>Diploma – Govt. Polytechnic for Women-Jammu [2021–2024]</li>
+        <li>B-Tech – Guru Nanak Dev Engineering & Technical College [2024–Present]</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="cv-section-title">Additional Training</div>
+      <ul class="training-list cv-list">
+        <li>Computer Application – 1 Year [2018-2019] – Pride Institute of Jammu</li>
+        <li>Basic Typing Program – 6 Months [2019] – Pride Institute of Jammu</li>
+        <li>Training Program – MIOT (Mechatronics Internet of Things) – Govt. Polytechnic Jammu [Dec/2023]</li>
+      </ul>
+    </div>
+
+    
+    <div class="section">
+      <div class="cv-section-title">Work Experience</div>
+      <ul class="work-list cv-list">
+        <li>
+          <span class="cv-label">Training and Placement Cell, GNDEC, Ludhiana:</span> Software Engineer (Nov 2025 – Present)
+          <div class="work-desc">Developing and maintaining scalable web applications supporting placement operations for thousands of students. Built systems for student data management, company drives, registrations, and announcements while collaborating with coordinators to ensure secure access and reliable data flow.</div>
+        </li>
+        <li>
+          <span class="cv-label">Mohey Innovations:</span> Software Engineer (Nov 2024 – Aug 2025)
+          <div class="work-desc">Worked in a fast-paced startup environment handling full-stack development and deployment. Built frontend interfaces, backend APIs, and owned features end-to-end with a focus on performance, scalability, and maintainable code.</div>
+        </li>
+        <li>
+          <span class="cv-label">RD Group of Industries:</span> Software Engineer (Jul 2024 – Sep 2024)
+          <div class="work-desc">Delivered full-stack features under tight deadlines. Collaborated with team members to integrate frontend and backend systems while strengthening problem-solving, teamwork, and professional communication skills.</div>
+        </li>
+        <li>
+          <span class="cv-label">Voltsec.io:</span> Junior Software Engineer (Apr 2024 – Jul 2024)
+          <div class="work-desc">Gained hands-on experience working on real-world projects. Assisted with development tasks, documentation, and agile workflows while building a strong foundation in software engineering practices.</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="cv-section-title">Projects</div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-name">Training and Placement (TNP) Website</div>
+          <div class="project-duration">Nov 2025 – Present</div>
+          <a class="project-link" href="https://www.tnpgndec.com/">tnpgndec.com</a>
+          <div class="project-features">
+            <div class="features-title">Key Features:</div>
+            <ul>
+              <li>Centralized platform for managing all placement-related activities of the institute</li>
+              <li>Real-time updates on company visits, placement drives, eligibility criteria, schedules, and results</li>
+              <li>Secure role-based access for authorized TNP coordinators</li>
+              <li>Coordinators can post new notices and update announcements securely</li>
+              <li>Students can view official placement announcements, register for drives, and track eligibility/schedules</li>
+              <li>Supports a large user base of 5,000+ students</li>
+              <li>Ensures accurate, timely, and reliable information flow</li>
+              <li>Improves transparency and communication between TNP cell and students</li>
+              <li>User-friendly and streamlined interface for easy navigation</li>
+            </ul>
+          </div>
+          <div class="tech-stack"><span class="cv-label">Technical Skills:</span> React, Node.js, MongoDB, REST APIs</div>
+        </div>
+        <div class="project-card">
+          <div class="project-name">InfoCascade</div>
+          <div class="project-duration">Oct 2025 – Present</div>
+          <a class="project-link" href="https://infocascade.onrender.com/">infocascade.onrender.com</a>
+          <div class="project-features">
+            <div class="features-title">Key Features:</div>
+            <ul>
+              <li>Centralized digital notice board for GNDEC</li>
+              <li>Delivers real-time academic and institutional updates</li>
+              <li>Covers notices related to examinations, results, fees, events, and official announcements</li>
+              <li>Ensures students never miss critical information</li>
+              <li>Built to scale with a growing community of 800+ active users</li>
+              <li>Reliable and efficient communication system for the campus</li>
+              <li>Simple and intuitive UI for quick access to notices</li>
+              <li>Optimized for daily usage as more students join the platform</li>
+            </ul>
+          </div>
+          <div class="tech-stack"><span class="cv-label">Technical Skills:</span> Next.js, Tailwind CSS, MongoDB</div>
+        </div>
+        <div class="project-card">
+          <div class="project-name">TyperHouse 0.2 (Phase 2)</div>
+          <div class="project-duration">Nov 2025 – Feb 2026</div>
+          <a class="project-link" href="https://typerhouse.tech/">typerhouse.tech</a>
+          <div class="project-features">
+            <div class="features-title">Key Features:</div>
+            <ul>
+              <li>Live deployment on a new domain: typerhouse.tech</li>
+              <li>Modern UI with interactive 3D visuals</li>
+              <li>Machine Learning–powered typing insights: analyzes recent typing patterns, predicts next 5 mistakes, recommends improvements</li>
+              <li>Focuses on improving typing accuracy proactively</li>
+              <li>Combines AI usage with typing speed improvement</li>
+              <li>Real-time group typing mode: compete with friends live</li>
+              <li>Smart analytics for typing speed and accuracy trends</li>
+              <li>Full-stack, production-ready architecture</li>
+              <li>Scalable deployment using Docker</li>
+              <li>Tech Highlights: 3D models (Blender), Interactive UI (React Three Fiber), Full-stack (Next.js), Database (MongoDB), ML models (Python)</li>
+            </ul>
+          </div>
+          <div class="tech-stack"><span class="cv-label">Technical Skills:</span> Next.js, MongoDB, Python, Scikit-learn, Docker, Machine Learning</div>
+        </div>
+        <div class="project-card">
+          <div class="project-name">TyperHouse (Phase 1)</div>
+          <div class="project-duration">Jun 2025 – Oct 2025</div>
+          <a class="project-link" href="https://typerhouse.tech">typerhouse.tech</a>
+          <div class="project-features">
+            <div class="features-title">Key Features:</div>
+            <ul>
+              <li>First live phase of a real-time multiplayer typing game</li>
+              <li>Google authentication using NextAuth</li>
+              <li>Room-based multiplayer system: create rooms, join via unique codes</li>
+              <li>Live multiplayer typing test experience</li>
+              <li>Dynamic paragraph generation based on test duration</li>
+              <li>Real-time WPM tracking for each participant</li>
+              <li>Visual feedback for incorrect words and accuracy improvement</li>
+              <li>Automatic game start when 2+ players join</li>
+              <li>Designed for performance, real-time interaction, and scalability</li>
+            </ul>
+          </div>
+          <div class="tech-stack"><span class="cv-label">Technical Skills:</span> Next.js, NextAuth, Socket.IO, Tailwind CSS</div>
+        </div>
+      </div>
+      <style>
+        .projects-grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 24px;
+          margin-top: 12px;
+        }
+        .project-card {
+          background: #f3f6fd;
+          border-radius: 14px;
+          box-shadow: 0 2px 12px rgba(60,90,150,0.10);
+          padding: 20px 24px;
+          min-width: 220px;
+          flex: 1 1 320px;
+          margin-bottom: 8px;
+          border-left: 5px solid #2980b9;
+        }
+        .project-name {
+          font-size: 1.22em;
+          font-weight: 700;
+          color: #1a237e;
+          margin-bottom: 6px;
+        }
+        .project-duration {
+          font-size: 1.06em;
+          color: #2980b9;
+          font-weight: 600;
+          margin-bottom: 6px;
+        }
+        .project-link {
+          color: #2980b9;
+          text-decoration: underline;
+          font-weight: 600;
+          font-size: 1.06em;
+          margin-bottom: 8px;
+          display: block;
+        }
+        .features-title {
+          font-size: 1.08em;
+          font-weight: 700;
+          color: #222;
+          margin-bottom: 4px;
+        }
+        .project-features ul {
+          margin: 0;
+          padding-left: 18px;
+        }
+        .project-features li {
+          font-size: 1.04em;
+          color: #444;
+          margin-bottom: 6px;
+          list-style: disc;
+        }
+        .tech-stack {
+          font-size: 1.04em;
+          color: #555;
+          margin-top: 4px;
+        }
+      </style>
+    </div>
+
+   
+
+   
+  
+  </div>
+</body>
+</html>
