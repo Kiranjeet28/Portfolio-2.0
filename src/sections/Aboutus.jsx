@@ -56,54 +56,53 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="col-span-1 xl:row-span-4">
-                    <div className="grid-container">
-                        <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-                            <Globe
-                                height={326}
-                                width={326}
-                                backgroundColor="rgba(0, 0, 0, 0)"
-                                backgroundImageOpacity={0.5}
-                                showAtmosphere
-                                showGraticules
-                                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                                labelsData={[{ lat: 40, lng: -100, text: 'Ludhiana, India', color: 'white', size: 15 }]}
-                            />
-                        </div>
-                        <div>
-                            <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
-                            <p className="grid-subtext">I&apos;m based in India and open to remote work worldwide.</p>
-                            <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="xl:col-span-2 xl:row-span-3">
-                    <div className="grid-container">
-                        <Canvas className="w-full h-full">
-                            <Suspense fallback={<CanvasLoader />}>
-
-                                <PerspectiveCamera makeDefault position={[0, 10, -7]} />
-                                <OrbitControls enableZoom={false} />
-
-                                <ambientLight intensity={0.5} />
-                                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
-                                <pointLight position={[-10, -10, -10]} intensity={0.5} />
-
-
-                                <Keyboard position={[0, 0, 0]} rotation={[0.1, -Math.PI, 0]} scale={[2.5, 3, 3]} />
-                            </Suspense>
-
-                        </Canvas>
-                        <div>
-                            <p className="grid-headtext">My Passion for Software Engineering</p>
-                            <p className="grid-subtext">
-                                I love solving problems, building production systems, and applying AI/ML to create intelligent features. Software engineering isn&apos;t just my profession—it&apos;s my passion.
-                            </p>
+                {!isMobile && (
+                    <div className="col-span-1 xl:row-span-4">
+                        <div className="grid-container">
+                            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
+                                <Globe
+                                    height={326}
+                                    width={326}
+                                    backgroundColor="rgba(0, 0, 0, 0)"
+                                    backgroundImageOpacity={0.5}
+                                    showAtmosphere
+                                    showGraticules
+                                    globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+                                    bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                                    labelsData={[{ lat: 40, lng: -100, text: 'Ludhiana, India', color: 'white', size: 15 }]}
+                                />
+                            </div>
+                            <div>
+                                <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
+                                <p className="grid-subtext">I&apos;m based in India and open to remote work worldwide.</p>
+                                <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
+
+                {!isMobile && (
+                    <div className="xl:col-span-2 xl:row-span-3">
+                        <div className="grid-container">
+                            <Canvas className="w-full h-full">
+                                <Suspense fallback={<CanvasLoader />}>
+                                    <PerspectiveCamera makeDefault position={[0, 10, -7]} />
+                                    <OrbitControls enableZoom={false} />
+                                    <ambientLight intensity={0.5} />
+                                    <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
+                                    <pointLight position={[-10, -10, -10]} intensity={0.5} />
+                                    <Keyboard position={[0, 0, 0]} rotation={[0.1, -Math.PI, 0]} scale={[2.5, 3, 3]} />
+                                </Suspense>
+                            </Canvas>
+                            <div>
+                                <p className="grid-headtext">My Passion for Software Engineering</p>
+                                <p className="grid-subtext">
+                                    I love solving problems, building production systems, and applying AI/ML to create intelligent features. Software engineering isn&apos;t just my profession—it&apos;s my passion.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                )}
 
                 <div className="mx-auto xl:col-span-1 xl:row-span-2">
                     <div className="grid-container">
