@@ -3,11 +3,13 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
 import Developer from '../components/Developer.jsx';
+import { useMediaQuery } from 'react-responsive';
 import { workExperiences } from '../constants/index.js';
 import CanvasLoader from '../components/CanvasLoader.jsx';
 
 const WorkExperience = () => {
   const [animationName, setAnimationName] = useState('idle');
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   return (
     <section className="c-space my-20" id="work">
@@ -15,19 +17,19 @@ const WorkExperience = () => {
         <p className="head-text">My Work Experience</p>
 
         <div className="work-container">
-          <div className="work-canvas">
-            <Canvas>
-              <ambientLight intensity={7} />
-              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-              <directionalLight position={[10, 10, 10]} intensity={1} />
-              <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
-
-              <Suspense fallback={<CanvasLoader />}>
-                <Developer position-y={-3} scale={3} animationName={animationName} />
-              </Suspense>import CanvasLoader from '../components/Loading.jsx';
-
-            </Canvas>
-          </div>
+          {!isMobile && (
+            <div className="work-canvas">
+              <Canvas>
+                <ambientLight intensity={7} />
+                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+                <directionalLight position={[10, 10, 10]} intensity={1} />
+                <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
+                <Suspense fallback={<CanvasLoader />}>
+                  <Developer position-y={-3} scale={3} animationName={animationName} />
+                </Suspense>
+              </Canvas>
+            </div>
+          )}
 
           <div className="work-content">
             <div className="sm:py-10 py-5 sm:px-5 px-2.5">

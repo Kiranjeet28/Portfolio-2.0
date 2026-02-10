@@ -60,7 +60,7 @@ const Projects = () => {
             </div>
 
             <a
-              className="flex items-center gap-2  cursor-pointer absolute right-10 z-50 text-white-600"
+              className="flex mt-24 items-center gap-2  cursor-pointer absolute right-10 z-50 text-white-600"
               href={currentProject.href}
               target="_blank"
               rel="noreferrer">
