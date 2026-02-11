@@ -32,7 +32,7 @@ const About = () => {
                 <div className="col-span-1 xl:row-span-3">
                     <div className="grid-container">
                         <NeonGradientCard borderSize={1} className=" flex items-center justify-center text-center">
-                            <img src="assets/about1.jpg" alt="grid-1" className=" rounded-md" />
+                            <img src="assets/about1-scaled.jpg" alt="grid-1" className=" rounded-md" />
                         </NeonGradientCard>
                         <div>
                             <p className="grid-headtext">Hi, I’m Kiranjeet Kour</p>
