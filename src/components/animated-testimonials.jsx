@@ -132,10 +132,10 @@ export const AnimatedTestimonials = ({
           <div className="flex gap-4 pt-12 md:pt-0">
           
             <button className="arrow-btn" onClick={handlePrev}>
-              <img src="/assets/left-arrow-scaled.png" alt="left arrow" />
+              <img src="/assets/left-arrow.png" alt="left arrow" />
             </button>
             <button className="arrow-btn" onClick={handleNext}>
-              <img src="/assets/right-arrow-scaled.png" alt="right arrow" className="w-4 h-4" />
+              <img src="/assets/right-arrow.png" alt="right arrow" className="w-4 h-4" />
             </button>
           
           </div>
