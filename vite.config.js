@@ -8,7 +8,7 @@ export default defineConfig({
     target: 'esnext', // Allow modern JS features like top-level await
   },
   esbuild: {
-    target: 'esnext', // Ensure esbuild uses modern syntax
+    target: 'esnexwt', // Ensure esbuild uses modern syntax
   },
 })
 
