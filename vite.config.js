@@ -1,24 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import viteCompression from 'vite-plugin-compression';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    viteCompression({
-      algorithm: 'brotliCompress',
-      ext: '.br',
-      threshold: 10240, // Only assets >10kb
-      deleteOriginFile: false,
-    }),
-    viteCompression({
-      algorithm: 'gzip',
-      ext: '.gz',
-      threshold: 10240,
-      deleteOriginFile: false,
-    })
-  ],
+  plugins: [react()],
   build: {
     target: 'esnext', // Allow modern JS features like top-level await
   },
