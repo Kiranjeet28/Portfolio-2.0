@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Keyboard(props) {
-  const { nodes, materials } = useGLTF('/models/kb-draco.glb')
+  const { nodes, materials } = useGLTF('https://cdn.jsdelivr.net/gh/kiranjeet28/profolio-Models@main/models/kb-draco.glb')
   const [glowIntensity, setGlowIntensity] = useState(0)
 
   useEffect(() => {
@@ -57,4 +57,4 @@ export function Keyboard(props) {
   )
 }
 
-useGLTF.preload('/models/kb-draco.glb')
+useGLTF.preload('https://cdn.jsdelivr.net/gh/kiranjeet28/profolio-Models@main/models/kb-draco.glb')

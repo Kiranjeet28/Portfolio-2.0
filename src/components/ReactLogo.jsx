@@ -9,7 +9,7 @@
 import { Float, useGLTF } from '@react-three/drei';
 
 const ReactLogo = (props) => {
-  const { nodes, materials } = useGLTF('models/react-draco.glb');
+  const { nodes, materials } = useGLTF('https://cdn.jsdelivr.net/gh/kiranjeet28/profolio-Models@main/models/react-draco.glb');
 
   return (
     <Float floatIntensity={1}>
@@ -26,6 +26,6 @@ const ReactLogo = (props) => {
   );
 };
 
-useGLTF.preload('models/react-draco.glb');
+useGLTF.preload('https://cdn.jsdelivr.net/gh/kiranjeet28/profolio-Models@main/models/react-draco.glb');
 
 export default ReactLogo;
