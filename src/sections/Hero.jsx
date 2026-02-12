@@ -1,5 +1,9 @@
 import { Leva } from 'leva'; // tool use for the controls the position to set the values of the 3D Model 
-// ...existing code...
+import { Suspense } from 'react';
+import CanvasLoader from '../components/CanvasLoader.jsx';
+import { Canvas } from '@react-three/fiber';
+import { useMediaQuery } from 'react-responsive';
+import { PerspectiveCamera } from '@react-three/drei';
 
 import React, { lazy, Suspense } from 'react';
 import CanvasLoader from '../components/CanvasLoader.jsx';
