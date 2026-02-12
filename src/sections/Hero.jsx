@@ -12,6 +12,7 @@ import Target from '../components/Target.jsx';
 import HeroCamera from '../components/HeroCamera.jsx';
 import { calculateSizes } from '../constants/index.js';
 import { HackerRoom } from '../components/HackerRoom.jsx';
+import { Suspense } from 'react';
 
 const Hero = () => {
     // Use media queries to determine screen size
@@ -32,6 +33,7 @@ const Hero = () => {
 
             <div className="w-full h-full absolute inset-0">
                 <Canvas className="w-full h-full">
+                    <Suspense fallback={<CanvasLoader />}>
                     {/* To hide controller */}
                     <Leva hidden />
                     <PerspectiveCamera makeDefault position={[0, 0, 30]} />
@@ -50,7 +52,8 @@ const Hero = () => {
                     )}
 
                     <ambientLight intensity={1} />
-                    <directionalLight position={[10, 10, 10]} intensity={0.5} />
+                        <directionalLight position={[10, 10, 10]} intensity={0.5} />
+                    </Suspense>
                 </Canvas>
             </div>
 
