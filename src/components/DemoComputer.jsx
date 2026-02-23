@@ -9,7 +9,7 @@ import { useGSAP } from '@gsap/react';
 
 const DemoComputer = (props) => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('https://cdn.jsdelivr.net/gh/kiranjeet28/profolio-Models@main/models/computer-draco.glb');
+  const { nodes, materials, animations } = useGLTF('/models/computer-draco.glb');
   const { actions } = useAnimations(animations, group);
 
   const txt = useVideoTexture(props.texture ? props.texture : '/textures/project/project1.mp4');

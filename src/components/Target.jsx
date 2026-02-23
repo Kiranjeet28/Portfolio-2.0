@@ -8,10 +8,10 @@ const Target = (props) => {
   let scene = null;
   let error = null;
   try {
-    ({ scene } = useGLTF('/models/target-stand/model.gltf'));
+    ({ scene } = useGLTF('/models/target-stand/model.glb'));
   } catch (e) {
     error = e;
-    console.error('Failed to load model.gltf:', e);
+    console.error('Failed to load model.glb:', e);
   }
 
   useGSAP(() => {
