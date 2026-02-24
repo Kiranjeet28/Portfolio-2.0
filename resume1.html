@@ -3,98 +3,616 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kiranjeet Kour Resume</title>
+  <title>Kiranjeet Kour — Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 40px; color: #222; background: #f8f9fa; }
-    .container { max-width: 800px; margin: auto; background: #fff; box-shadow: 0 2px 16px rgba(0,0,0,0.08); border-radius: 12px; padding: 40px; }
-    .header { text-align: left; margin-bottom: 32px; padding-bottom: 16px; }
-    .name { font-size: 2.5em; font-weight: 700; color: #2c3e50; margin-bottom: 8px; text-align: left; }
-    .contact { font-size: 1.1em; color: #555; margin-bottom: 0; text-align: left; }
-    .section { margin-bottom: 32px; }
-    h2 { color: #2980b9; margin-bottom: 12px; }
-    .skills-list, .projects-list, .work-list { list-style: none; padding: 0; }
-    .skills-list li, .projects-list li, .work-list li { margin-bottom: 10px; }
-    .work-list strong, .projects-list strong { color: #2c3e50; }
-    .project-link { color: #2980b9; text-decoration: none; }
-    .summary { font-size: 1.15em; color: #444; margin-bottom: 18px; }
-    .tech-stack { font-size: 0.98em; color: #555; margin-top: 4px; }
-    .project-name { font-size: 1.18em; }
+    :root {
+      --ink: #1a1f2e;
+      --ink-mid: #3d4455;
+      --ink-light: #6b7280;
+      --ink-faint: #9ca3af;
+      --rule: #dde1e9;
+      --bg: #ffffff;
+      --bg-subtle: #f7f8fb;
+      --accent: #1d4ed8;
+      --accent-light: #eff4ff;
+      --accent-mid: #93aeed;
+      --gold: #b07d2e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── SCREEN VIEW ── */
+    body {
+      font-family: 'Lato', sans-serif;
+      background: #e8eaf0;
+      color: var(--ink);
+      padding: 32px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      max-height: 297mm;
+      margin: 0 auto;
+      background: var(--bg);
+      box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      height: 4px;
+      flex-shrink: 0;
+      background: linear-gradient(90deg, var(--accent) 0%, #6366f1 60%, var(--gold) 100%);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      padding: 18px 32px 14px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 20px;
+      border-bottom: 1.5px solid var(--rule);
+      flex-shrink: 0;
+    }
+
+    .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9em;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+      margin-bottom: 3px;
+    }
+
+    .name span { color: var(--accent); }
+
+    .headline {
+      font-size: 0.62em;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 6px;
+    }
+
+    .tagline {
+      font-size: 0.72em;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.5;
+      max-width: 400px;
+    }
+
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      padding-top: 3px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.65em;
+      font-weight: 400;
+      color: var(--ink-mid);
+      text-decoration: none;
+    }
+
+    .contact-item svg {
+      width: 10px; height: 10px;
+      color: var(--accent-mid);
+      flex-shrink: 0;
+    }
+
+    /* ── BODY ── */
+    .body-layout {
+      display: grid;
+      grid-template-columns: 168px 1fr;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      background: var(--bg-subtle);
+      border-right: 1.5px solid var(--rule);
+      padding: 14px 16px;
+      overflow: hidden;
+    }
+
+    .side-section { margin-bottom: 14px; }
+    .side-section:last-child { margin-bottom: 0; }
+
+    .side-label {
+      font-size: 0.52em;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .skill-item {
+      font-size: 0.67em;
+      color: var(--ink-mid);
+      padding: 2px 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      line-height: 1.3;
+    }
+
+    .skill-item::before {
+      content: '';
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--accent-mid);
+      flex-shrink: 0;
+    }
+
+    .skill-item.primary::before { background: var(--accent); width: 5px; height: 5px; }
+
+    .edu-entry { margin-bottom: 9px; }
+    .edu-entry:last-child { margin-bottom: 0; }
+
+    .edu-degree {
+      font-size: 0.66em;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 1px;
+    }
+
+    .edu-school {
+      font-size: 0.61em;
+      color: var(--ink-light);
+      line-height: 1.3;
+    }
+
+    .edu-year {
+      font-size: 0.59em;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 12px 22px 12px;
+      overflow: hidden;
+    }
+
+    .section { margin-bottom: 10px; }
+    .section:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-size: 0.54em;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* Stat strip */
+    .stat-strip {
+      display: flex;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 6px 4px;
+      border-right: 1px solid var(--rule);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.0em;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .stat-label {
+      font-size: 0.52em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+
+    /* Experience */
+    .exp-entry {
+      margin-bottom: 7px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .exp-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 1px;
+    }
+
+    .exp-role {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.82em;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .exp-date {
+      font-size: 0.6em;
+      font-weight: 700;
+      color: var(--ink-light);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .exp-company {
+      font-size: 0.66em;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .exp-bullets { list-style: none; padding: 0; }
+
+    .exp-bullets li {
+      font-size: 0.67em;
+      color: var(--ink-mid);
+      line-height: 1.5;
+      padding: 1px 0 1px 11px;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent-mid);
+      font-size: 0.85em;
+    }
+
+    /* Projects */
+    .project-entry {
+      margin-bottom: 7px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .project-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 3px;
+      flex-wrap: wrap;
+    }
+
+    .project-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.8em;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .project-link {
+      font-size: 0.6em;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .project-desc {
+      font-size: 0.66em;
+      color: var(--ink-mid);
+      line-height: 1.5;
+      margin-bottom: 5px;
+    }
+
+    .tech-row { display: flex; flex-wrap: wrap; gap: 3px; }
+
+    .tech-pill {
+      font-size: 0.56em;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid #c7d8fb;
+      padding: 1px 6px;
+      border-radius: 100px;
+    }
+
+    .tech-pill.neutral {
+      color: var(--ink-mid);
+      background: var(--bg-subtle);
+      border-color: var(--rule);
+    }
+
+    /* ── PRINT STYLES ── */
+    @media print {
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+      }
+
+      .page {
+        width: 210mm;
+        height: 297mm;
+        max-height: 297mm;
+        margin: 0;
+        box-shadow: none;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="name">Kiranjeet Kour</div>
-      <div class="contact">
-        kiranjeetkour144@gmail.com &nbsp;|&nbsp; +91 7006111726 &nbsp;|&nbsp;
-        <a href="https://www.linkedin.com/in/kiranjeet-kour-3823ba268/">LinkedIn</a> &nbsp;|&nbsp;
-        <a href="https://github.com/kiranjeet28">GitHub</a> &nbsp;|&nbsp;
-        <a href="https://portfolokiranjeet28.vercel.app/">Portfolio</a>
-      </div>
+<div class="page">
+
+  <div class="topbar"></div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="name">Kiranjeet <span>Kour</span></div>
+      <div class="headline">AI / ML Engineer &nbsp;·&nbsp; Full-Stack Developer</div>
+      <div class="tagline">2.5+ years engineering production-grade AI systems serving 5,000+ users. Specialized in machine learning model integration, predictive pipelines, and intelligent full-stack applications — from data ingestion through scalable deployment.</div>
     </div>
-
-    <div class="section">
-      <h2>Profile Summary</h2>
-      <div class="summary">Results-driven full-stack software engineer with proven expertise in designing, developing, and deploying scalable web applications and AI-powered systems. </div>
-    </div>
-
-    <div class="section">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li><strong>Web Development:</strong> Node.js, React, Next.js, Prisma, MongoDB, PostgreSQL, Docker</li>
-        <li><strong>App Development:</strong> React Native, Node.js, MongoDB, PostgreSQL</li>
-        <li><strong>AI & ML:</strong> Python, Scikit-learn, Generative AI (RAG), Model Fine-tuning</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Work Experience</h2>
-      <ul class="work-list">
-        <li>
-          <strong>Training and Placement Cell, GNDEC, Ludhiana</strong> — Software Engineer (Nov 2025 – Present)
-        </li>
-        <li>
-          <strong>Mohey Innovations</strong> — Software Engineer (Nov 2024 – Aug 2025)
-        </li>
-        <li>
-          <strong>RD Group of Industries</strong> — Software Engineer (Jul 2024 – Sep 2024)
-        </li>
-        <li>
-          <strong>Voltsec.io</strong> — Junior Software Engineer (Apr 2024 – Jul 2024)
-        </li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Projects</h2>
-      <ul class="projects-list">
-        <li>
-          <span class="project-name"><strong>Training and Placement (TNP) Website:</strong></span> The official Training and Placement (TNP) website serves as a centralized platform for managing and disseminating all placement-related activities of the institute. The portal enables students to access real-time updates on company visits, placement drives, eligibility criteria, schedules, and results.
-
-As a member of the TNP team, I contributed to maintaining and managing the website, ensuring accurate and timely information flow to a growing user base of 5,000+ students. Authorized TNP coordinators can securely post and update notices, while students can view announcements, register for drives, and stay informed through a streamlined and user-friendly interface. The platform significantly improves transparency, efficiency, and communication between the TNP cell and students.<a class="project-link" href="https://www.tnpgndec.com/">tnpgndec.com</a>
-          <div class="tech-stack"><strong>Technical Skills:</strong> React, Node.js, MongoDB, REST APIs</div>
-        </li>
-        <li>
-          <span class="project-name"><strong>InfoCascade:</strong></span> InfoCascade is a centralized digital notice board developed for GNDEC, designed to deliver important academic and institutional updates in real time. The platform shares notices related to examinations, results, fees, events, and official announcements, ensuring students never miss critical information. With a growing community of 800+ active users, InfoCascade continues to scale as more students join daily, offering a reliable, user-friendly, and efficient communication system for the campus. <a class="project-link" href="https://infocascade.onrender.com/">infocascade.onrender.com</a>
-          <div class="tech-stack"><strong>Technical Skills:</strong> Next.js, Tailwind CSS, MongoDB</div>
-        </li>
-        <li>
-          <span class="project-name"><strong>TyperHouse 0.2 (Phase 2):</strong></span> An advanced ML-powered typing platform that analyzes user typing behavior to predict common mistakes and improve accuracy. Uses machine learning models to recommend likely errors before they occur. Features enhanced UI, group competition mode, and scalable deployment, enabling users to train, compete, and track performance efficiently. What’s new in 0.2? : ML analyzes the last typing pattern of the user, Predicts and recommends the next 5 key mistakes the user may make, Helps improve accuracy before mistakes actually happen
-
-
-,Why TyperHouse stands out: Test your own typing speed, Smart accuracy & speed insights, Group typing mode – compete with friends in real time, Turn practice into a typing-speed competition <a class="project-link" href="https://typerhouse.tech/">typerhouse.tech</a>
-          <div class="tech-stack"><strong>Technical Skills:</strong> Next.js, MongoDB, Python, Scikit-learn, Docker, Machine Learning</div>
-        </li>
-        <li>
-          <span class="project-name"><strong>TyperHouse (Phase 1):</strong></span> A real-time multiplayer typing game built as a full-stack web application. Features include room creation and joining via codes, Google authentication, live WPM tracking, automatic game start, and visual feedback for incorrect words. Focused on real-time interaction, performance, and an engaging competitive experience.  Core Features in Phase 1:,Authentication with Google (via NextAuth),Room Creation & Joining (via unique codes),Live Multiplayer Typing Test
-Dynamic paragraph generation based on test time
-Real-time WPM tracking for each participant
-Visual cues for incorrect words while typing
- Auto-start once 2+ players join<a class="project-link" href="https://typerhouse.tech">typerhouse.tech</a>
-          <div class="tech-stack"><strong>Technical Skills:</strong> Next.js, NextAuth, Socket.IO, Tailwind CSS</div>
-        </li>
-      </ul>
+    <div class="contact-block">
+      <a class="contact-item" href="/cdn-cgi/l/email-protection#98f3f1eaf9f6f2fdfdecf3f7edeaa9acacd8fff5f9f1f4b6fbf7f5">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        <span class="__cf_email__" data-cfemail="7a1113081b14101f1f0e11150f084b4e4e3a1d171b131654191517">kiranjeetkour144@gmail.com</span>
+      </a>
+      <a class="contact-item" href="tel:+917006111726">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        +91 70061 11726
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/kiranjeet-kour-3823ba268/" target="_blank">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/kiranjeet-kour
+      </a>
+      <a class="contact-item" href="https://github.com/kiranjeet28" target="_blank">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        github.com/kiranjeet28
+      </a>
+      <a class="contact-item" href="https://portfolokiranjeet28.vercel.app/" target="_blank">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+        portfolokiranjeet28.vercel.app
+      </a>
     </div>
   </div>
-</body>
-</html>
+
+  <!-- BODY -->
+  <div class="body-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="side-section">
+        <div class="side-label">AI &amp; Machine Learning</div>
+        <div class="skill-item primary">Python</div>
+        <div class="skill-item primary">Scikit-learn</div>
+        <div class="skill-item primary">TensorFlow</div>
+        <div class="skill-item primary">Generative AI (RAG)</div>
+        <div class="skill-item primary">Model Fine-tuning</div>
+        <div class="skill-item primary">ML Pipelines</div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-label">Backend &amp; Data</div>
+        <div class="skill-item">Node.js</div>
+        <div class="skill-item">REST APIs</div>
+        <div class="skill-item">PostgreSQL</div>
+        <div class="skill-item">MongoDB</div>
+        <div class="skill-item">Prisma ORM</div>
+        <div class="skill-item">Docker</div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-label">Frontend &amp; Mobile</div>
+        <div class="skill-item">React / Next.js</div>
+        <div class="skill-item">React Native</div>
+        <div class="skill-item">Tailwind CSS</div>
+        <div class="skill-item">Socket.IO</div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-label">Languages</div>
+        <div class="skill-item">English</div>
+        <div class="skill-item">Punjabi</div>
+        <div class="skill-item">Hindi</div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-label">Education</div>
+        <div class="edu-entry">
+          <div class="edu-degree">B.Tech — CSE</div>
+          <div class="edu-school">GNDEC, Ludhiana</div>
+          <div class="edu-year">2024 – 2027</div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-degree">Diploma — CSE</div>
+          <div class="edu-school">Govt. Polytechnic for Women, Jammu</div>
+          <div class="edu-year">2021 – 2024</div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-degree">12th — NIOS</div>
+          <div class="edu-school">70%</div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-degree">10th — GHPS</div>
+          <div class="edu-school">91%</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- METRICS -->
+      <div class="section">
+        <div class="section-title">Impact at a Glance</div>
+        <div class="stat-strip">
+          <div class="stat-item">
+            <div class="stat-num">5K+</div>
+            <div class="stat-label">Users Served</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">2.5+</div>
+            <div class="stat-label">Yrs Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">4</div>
+            <div class="stat-label">Companies</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">4</div>
+            <div class="stat-label">Live Products</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="section">
+        <div class="section-title">Work Experience</div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-role">Software Engineer</div>
+            <div class="exp-date">Nov 2025 — Present</div>
+          </div>
+          <div class="exp-company">Training &amp; Placement Cell · GNDEC, Ludhiana</div>
+          <ul class="exp-bullets">
+            <li>Architected and deployed a scalable placement platform serving 5,000+ students with automated eligibility filtering, drive scheduling, and real-time results processing.</li>
+            <li>Designed RESTful APIs with role-based access control for coordinators and optimised MongoDB queries for sub-200ms response times under concurrent institutional load.</li>
+            <li>Built student-facing dashboards for drive registration, eligibility tracking, and official announcements, improving communication transparency across the campus.</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-role">Software Engineer</div>
+            <div class="exp-date">Nov 2024 — Aug 2025</div>
+          </div>
+          <div class="exp-company">Mohey Innovations</div>
+          <ul class="exp-bullets">
+            <li>Owned end-to-end feature development across web and mobile products in a fast-paced startup; built frontend interfaces, backend APIs, and integrated ML inference pipelines into production workflows.</li>
+            <li>Collaborated cross-functionally to ship performance-optimised, maintainable code aligned with business goals and tight release timelines.</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-role">Software Engineer</div>
+            <div class="exp-date">Jul 2024 — Sep 2024</div>
+          </div>
+          <div class="exp-company">RD Group of Industries</div>
+          <ul class="exp-bullets">
+            <li>Delivered full-stack features and internal data management tooling under tight deadlines, streamlining operational workflows across business units.</li>
+            <li>Strengthened engineering practices in CI/CD workflows, database optimisation, and cross-team technical communication.</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div class="exp-role">Junior Software Engineer</div>
+            <div class="exp-date">Apr 2024 — Jul 2024</div>
+          </div>
+          <div class="exp-company">Voltsec.io</div>
+          <ul class="exp-bullets">
+            <li>Contributed to backend services and participated in code reviews, testing, and agile sprint workflows on real-world production projects.</li>
+            <li>Built a strong foundation in professional software engineering practices, REST API design, and collaborative delivery within an experienced engineering team.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="section">
+        <div class="section-title">Key Projects</div>
+
+        <div class="project-entry">
+          <div class="project-header">
+            <div class="project-name">TyperHouse 0.2 — ML-Powered Typing Platform</div>
+            <a class="project-link" href="https://typerhouse.tech/" target="_blank">typerhouse.tech ↗</a>
+          </div>
+          <div class="project-desc">Trained a Scikit-learn classification model on keystroke dynamics data to predict the next 5 likely typing mistakes in real time and surface personalised improvement tips. Integrated the ML inference pipeline into a Next.js web app with containerised Docker deployment, an immersive 3D interface built with React Three Fiber, and a live multiplayer typing mode with smart analytics.</div>
+          <div class="tech-row">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Scikit-learn</span>
+            <span class="tech-pill">ML Pipeline</span>
+            <span class="tech-pill neutral">Next.js</span>
+            <span class="tech-pill neutral">MongoDB</span>
+            <span class="tech-pill neutral">Docker</span>
+            <span class="tech-pill neutral">Socket.IO</span>
+          </div>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-header">
+            <div class="project-name">Training &amp; Placement Platform</div>
+            <a class="project-link" href="https://www.tnpgndec.com/" target="_blank">tnpgndec.com ↗</a>
+          </div>
+          <div class="project-desc">Centralised institutional platform serving 5,000+ students with automated eligibility filtering, recruitment drive scheduling, result publishing, and secure role-based access for TNP coordinators. Ensures accurate, real-time communication between the placement cell and the entire student body.</div>
+          <div class="tech-row">
+            <span class="tech-pill neutral">React</span>
+            <span class="tech-pill neutral">Node.js</span>
+            <span class="tech-pill neutral">MongoDB</span>
+            <span class="tech-pill neutral">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-header">
+            <div class="project-name">InfoCascade — Institutional Notice Board</div>
+            <a class="project-link" href="https://infocascade.onrender.com/" target="_blank">infocascade.onrender.com ↗</a>
+          </div>
+          <div class="project-desc">Real-time campus communication platform delivering exam, result, fee, and event updates to 800+ active daily users. Built on an event-driven architecture with optimised database queries to guarantee timely, reliable information delivery at scale.</div>
+          <div class="tech-row">
+            <span class="tech-pill neutral">Next.js</span>
+            <span class="tech-pill neutral">MongoDB</span>
+            <span class="tech-pill neutral">Tailwind CSS</span>
