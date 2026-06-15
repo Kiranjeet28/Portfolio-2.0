@@ -73,6 +73,7 @@ export const myProjects = [
     duration: 'Nov 2025 – Present',
     href: 'https://www.tnpgndec.com/',
     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9J13lb7mhmCzcO02FMQElQnvgvAsHkDYpTg&s',
+    texture: '/assets/projects/tnp.png',
     spotlight: '/assets/spotlight2.png',
     logoStyle: {
       backgroundColor: '#0B1B2B',
@@ -94,6 +95,7 @@ export const myProjects = [
     duration: 'Oct 2025 – Present',
     href: 'https://infocascade.onrender.com/',
     logo: 'https://infocascade.onrender.com/images/Infocascade.png',
+    texture: '/assets/projects/infocascade.png',
     spotlight: '/assets/spotlight2.png',
     logoStyle: {
       backgroundColor: '#071527',
@@ -115,7 +117,7 @@ export const myProjects = [
     duration: 'Nov 2025 – Feb 2026',
     href: 'https://typerhouse.tech/',
     logo: 'https://www.typerhouse.tech/_next/image?url=%2Flogo%2FLogo.png&w=32&q=75',
-    texture: '/textures/project/project1.mp4',
+    texture: '/assets/projects/typerhouse.png',
      spotlight: '/assets/spotlight2.png',
     logoStyle: {
       backgroundColor: '#071527',
@@ -138,7 +140,7 @@ export const myProjects = [
     duration: 'Jun 2025 – Oct 2025',
     href: 'https://typerhouse.tech',
     logo: 'https://www.typerhouse.tech/_next/image?url=%2Flogo%2FLogo.png&w=32&q=75',
-    texture: '/textures/project/project2.mp4',
+    texture: '/assets/projects/typerhouse.png',
     spotlight: '/assets/spotlight2.png',
     logoStyle: {
       backgroundColor: '#0E1F38',

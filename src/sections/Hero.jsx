@@ -24,12 +24,32 @@ const Hero = () => {
 
     return (
         <section className="min-h-screen w-full flex flex-col relative" id="home">
-            <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
+            {/* Radial glow background */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.06)_0%,transparent_60%)] pointer-events-none" />
+
+            <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 relative z-10">
                 <p className="sm:text-3xl text-xl font-medium text-white text-center font-mono">
                     Hi, I am Kiranjeet Kour <span className="waving-hand">👋</span>
                 </p>
-                <p className="hero_tag text-gray_gradient font-sans">Exculsive Solutions</p>
+                <p className="hero_tag text-gray_gradient font-sans">Exclusive Solutions</p>
             </div>
+
+            {/* Floating Info Cards */}
+            {!isMobile && (
+                <>
+                    <div className="absolute left-10 top-1/3 z-10 glassmorphism p-5 rounded-2xl border border-white/5 shadow-2xl flex flex-col gap-2 max-w-[220px] transition-all duration-300 hover:border-purple-500/30 hover:scale-105">
+                        <span className="text-purple-400 font-bold text-xs tracking-widest uppercase">EXPERTISE</span>
+                        <h4 className="text-white font-semibold text-base">Full-Stack Dev</h4>
+                        <p className="text-white-600 text-[11px] leading-relaxed">Developing scalable frontend & backend architectures.</p>
+                    </div>
+
+                    <div className="absolute right-10 top-1/3 z-10 glassmorphism p-5 rounded-2xl border border-white/5 shadow-2xl flex flex-col gap-2 max-w-[220px] transition-all duration-300 hover:border-purple-500/30 hover:scale-105">
+                        <span className="text-purple-400 font-bold text-xs tracking-widest uppercase">INTELLIGENCE</span>
+                        <h4 className="text-white font-semibold text-base">AI & ML Systems</h4>
+                        <p className="text-white-600 text-[11px] leading-relaxed">Integrating smart intelligence and predictive models.</p>
+                    </div>
+                </>
+            )}
 
             <div className="w-full h-full absolute inset-0">
                 <Canvas className="w-full h-full">

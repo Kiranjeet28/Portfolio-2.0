@@ -21,11 +21,12 @@ const Navbar = () => {
     const closeMenu = () => setIsOpen(false);
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-black/90">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex justify-between items-center py-5 mx-auto c-space">
-                    <a href="/" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">
-                        Kiranjeet 
+        <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl z-50 rounded-full glassmorphism border border-white/5 shadow-2xl px-6 transition-all duration-300">
+            <div className="mx-auto">
+                <div className="flex justify-between items-center py-3 mx-auto c-space">
+                    <a href="/" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors flex items-center gap-2">
+                        <span className="w-2.5 h-2.5 rounded-full bg-purple-500 shadow-[0_0_8px_#a855f7] animate-pulse" />
+                        Kiranjeet
                     </a>
 
                     <button
@@ -41,7 +42,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className={`nav-sidebar ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
+            <div className={`nav-sidebar rounded-2xl ${isOpen ? 'max-h-screen mt-2 border border-white/5' : 'max-h-0'}`}>
                 <nav className="p-5">
                     <NavItems onClick={closeMenu} />
                 </nav>

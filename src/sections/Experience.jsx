@@ -1,64 +1,36 @@
-import { Suspense, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-
-import Developer from '../components/Developer.jsx';
-import { useMediaQuery } from 'react-responsive';
+import React from 'react';
 import { workExperiences } from '../constants/index.js';
-import CanvasLoader from '../components/CanvasLoader.jsx';
 
 const WorkExperience = () => {
-  const [animationName, setAnimationName] = useState('idle');
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-
   return (
     <section className="c-space my-20" id="work">
       <div className="w-full text-white-600">
         <p className="head-text">My Work Experience</p>
 
-        <div className="work-container">
-          {!isMobile && (
-            <div className="work-canvas">
-              <Canvas>
-                <ambientLight intensity={7} />
-                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-                <directionalLight position={[10, 10, 10]} intensity={1} />
-                <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
-                <Suspense fallback={<CanvasLoader />}>
-                  <Developer position-y={-3} scale={3} animationName={animationName} />
-                </Suspense>
-              </Canvas>
-            </div>
-          )}
-
-          <div className="work-content">
-            <div className="sm:py-10 py-5 sm:px-5 px-2.5">
-              {workExperiences.map((item, index) => (
-                <div
-                  key={index}
-                  onClick={() => setAnimationName(item.animation.toLowerCase())}
-                  onPointerOver={() => setAnimationName(item.animation.toLowerCase())}
-                  onPointerOut={() => setAnimationName('idle')}
-                  className="work-content_container group">
-                  <div className="flex flex-col h-full justify-start items-center py-2">
-                    <div className="work-content_logo">
-                      <img className="w-full h-full" src={item.icon} alt={item.name + ' logo'} />
-                    </div>
-
-                    <div className="work-content_bar" />
-                  </div>
-
-                  <div className="sm:p-5 px-2.5 py-5">
-                    <p className="font-bold text-white-800">{item.name}</p>
-                    <p className="text-sm mb-5">
-                      {item.pos} -- <span>{item.duration}</span>
-                    </p>
-                    <p className="group-hover:text-white transition-all ease-in-out duration-500">{item.title}</p>
-                  </div>
+        <div className="mt-12 flex flex-col gap-6 max-w-4xl mx-auto">
+          {workExperiences.map((item, index) => (
+            <div
+              key={index}
+              className="group border border-white/5 bg-black-200/40 backdrop-blur-md p-6 rounded-2xl shadow-xl transition-all duration-300 hover:border-purple-500/20 hover:shadow-[0_0_30px_rgba(168,85,247,0.06)] hover:-translate-y-0.5 flex sm:flex-row flex-col gap-5 items-start">
+              
+              <div className="flex flex-row sm:flex-col justify-start items-center gap-4">
+                <div className="rounded-2xl w-16 h-16 p-2 bg-black-600 border border-white/5 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-purple-500/40 flex items-center justify-center shrink-0">
+                  <img className="w-full h-full object-contain rounded-xl" src={item.icon} alt={item.name + ' logo'} />
                 </div>
-              ))}
+              </div>
+
+              <div className="flex-1 w-full">
+                <div className="flex sm:flex-row flex-col sm:items-center justify-between gap-2 mb-2">
+                  <h4 className="font-bold text-white text-lg tracking-wide group-hover:text-purple-300 transition-colors duration-300">{item.name}</h4>
+                  <span className="text-xs font-semibold px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 w-fit shrink-0">
+                    {item.duration}
+                  </span>
+                </div>
+                <p className="text-purple-400/90 text-xs font-bold mb-3 tracking-widest uppercase">{item.pos}</p>
+                <p className="text-white-600 text-sm leading-relaxed font-light">{item.title}</p>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

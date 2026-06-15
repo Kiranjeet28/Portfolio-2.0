@@ -19,7 +19,7 @@ function App() {
       {/* <MinorProject/> */}
       <WorkExperience/>
       {/* <Clients/> */}
-      {/* <Contact/> */}
+      <Contact/>
       <Footer/>
     </main>
   )
