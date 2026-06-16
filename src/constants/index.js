@@ -168,8 +168,17 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 };
 
 export const workExperiences = [
-   {
+  {
     id: 1,
+    name: 'Padmas Technologies',
+    pos: 'Business Development Executive Intern',
+    duration: 'March 2026 - July 2026',
+    title: 'Worked at the intersection of software development and business strategy, gaining hands-on experience in client relationship management, business development, software requirement analysis, project estimation, and software pricing models. Collaborated with technical teams to understand product development lifecycles while learning how technology solutions are positioned, proposed, and delivered to clients.',
+    icon: 'https://padmastechnologies.com/_next/image?url=%2Fassets%2Fimages%2FPadmas-tm-logo-blue.png&w=3840&q=75',
+    animation: 'victory',
+  },
+   {
+    id: 2,
     name: 'Training and Placement Cell, GNDEC, Ludhiana',
     pos: 'Software Er.',
     duration: 'Nov 2025- Present',
@@ -178,7 +187,7 @@ export const workExperiences = [
     animation: 'victory',
   },
   {
-    id: 2,
+    id: 3,
     name: 'Mohey Innovations',
     pos: 'Software Er.',
     duration: 'Nov 2024 - Aug 2025',
@@ -187,7 +196,7 @@ export const workExperiences = [
     animation: 'victory',
   },
   {
-    id: 3,
+    id: 4,
     name: 'RD group of Industries',
     pos: 'Software Er.',
     duration: 'Jul 2024 - Sep 2024',
