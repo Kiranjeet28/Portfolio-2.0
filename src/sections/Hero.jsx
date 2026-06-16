@@ -31,25 +31,45 @@ const Hero = () => {
                 <p className="sm:text-3xl text-xl font-medium text-white text-center font-mono">
                     Hi, I am Kiranjeet Kour <span className="waving-hand">👋</span>
                 </p>
-                <p className="hero_tag text-gray_gradient font-sans">Exclusive Solutions</p>
+                {/* <p className="hero_tag text-gray_gradient font-sans ">SOFTWARE DEVELOPER</p> */}
             </div>
 
             {/* Floating Info Cards */}
-            {!isMobile && (
-                <>
-                    <div className="absolute left-10 top-1/3 z-10 glassmorphism p-5 rounded-2xl border border-white/5 shadow-2xl flex flex-col gap-2 max-w-[220px] transition-all duration-300 hover:border-purple-500/30 hover:scale-105">
-                        <span className="text-purple-400 font-bold text-xs tracking-widest uppercase">EXPERTISE</span>
-                        <h4 className="text-white font-semibold text-base">Full-Stack Dev</h4>
-                        <p className="text-white-600 text-[11px] leading-relaxed">Developing scalable frontend & backend architectures.</p>
-                    </div>
+         {!isMobile && (
+  <>
+    {/* Left Card */}
+    <div className="absolute left-10 top-1/3 z-10 glassmorphism p-5 rounded-2xl border border-white/5 shadow-2xl flex flex-col gap-2 max-w-[250px] transition-all duration-300 hover:border-purple-500/30 hover:scale-105">
+      <span className="text-purple-400 font-bold text-xs tracking-widest uppercase">
+        ENGINEERING
+      </span>
 
-                    <div className="absolute right-10 top-1/3 z-10 glassmorphism p-5 rounded-2xl border border-white/5 shadow-2xl flex flex-col gap-2 max-w-[220px] transition-all duration-300 hover:border-purple-500/30 hover:scale-105">
-                        <span className="text-purple-400 font-bold text-xs tracking-widest uppercase">INTELLIGENCE</span>
-                        <h4 className="text-white font-semibold text-base">AI & ML Systems</h4>
-                        <p className="text-white-600 text-[11px] leading-relaxed">Integrating smart intelligence and predictive models.</p>
-                    </div>
-                </>
-            )}
+      <h4 className="text-white font-semibold text-base">
+        Full-Stack & System Design
+      </h4>
+
+      <p className="text-gray-400 text-[11px] leading-relaxed">
+        Building production-grade web & mobile applications with
+        scalable architecture, clean code, and high-performance systems.
+      </p>
+    </div>
+
+    {/* Right Card */}
+    <div className="absolute right-10 top-1/3 z-10 glassmorphism p-5 rounded-2xl border border-white/5 shadow-2xl flex flex-col gap-2 max-w-[250px] transition-all duration-300 hover:border-purple-500/30 hover:scale-105">
+      <span className="text-purple-400 font-bold text-xs tracking-widest uppercase">
+        INTELLIGENCE
+      </span>
+
+      <h4 className="text-white font-semibold text-base">
+        AI & ML Solutions
+      </h4>
+
+      <p className="text-gray-400 text-[11px] leading-relaxed">
+        Integrating machine learning models and AI-driven features
+        to deliver intelligent, data-powered user experiences.
+      </p>
+    </div>
+  </>
+)}
 
             <div className="w-full h-full absolute inset-0">
                 <Canvas className="w-full h-full">

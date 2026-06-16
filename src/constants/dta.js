@@ -15,8 +15,10 @@ export const details = {
 ===================================================== */
 
 export const summary = `
-I work across frontend and backend stacks, deployment pipelines,
-and AI/ML frameworks to build scalable, production-ready systems.
+Software Developer with experience building production-grade web and mobile applications
+used by real users. Strong expertise in Data Structures & Algorithms, System Design, and
+Full-Stack Development. I specialize in creating scalable, maintainable, and high-performance
+software solutions with AI/ML integration for intelligent, data-driven systems.
 `;
 
 /* =====================================================
@@ -25,25 +27,37 @@ and AI/ML frameworks to build scalable, production-ready systems.
 
 export const skills = {
   webDevelopment: [
-    'Node.js',
     'React',
     'Next.js',
-    'Prisma',
-    'MongoDB',
-    'PostgreSQL',
-    'Docker',
-  ],
-  appDevelopment: [
-    'React Native',
     'Node.js',
+    'TypeScript',
     'MongoDB',
     'PostgreSQL',
+    'REST APIs',
+  ],
+  mobileAppDevelopment: [
+    'React Native',
+    'Mobile Architecture',
+    'Cross-platform Development',
   ],
   aiAndML: [
     'Python',
-    'Scikit-learn',
-    'Generative AI (RAG)',
-    'Model Fine-tuning',
+    'AI/ML Integration',
+    'Generative AI',
+    'Data-driven Learning',
+    'Predictive Analytics',
+  ],
+  softwareEngineering: [
+    'Data Structures & Algorithms',
+    'System Design',
+    'Software Architecture',
+    'Scalable Systems',
+  ],
+  devOpsAndCloud: [
+    'Docker',
+    'Cloud Deployment',
+    'CI/CD Pipelines',
+    'Scalable Infrastructure',
   ],
 };
 
