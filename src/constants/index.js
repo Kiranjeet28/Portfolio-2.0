@@ -93,7 +93,7 @@ export const myProjects = [
     subdesc:
       'Built to scale with an active user base of 800+ students, InfoCascade ensures critical notices reach the campus reliably. The platform focuses on a simple, user-friendly experience for both admins and students.',
     duration: 'Oct 2025 – Present',
-    href: 'https://infocascade.onrender.com/',
+    href: 'https://infocascadebuild.vercel.app/',
     logo: 'https://infocascade.onrender.com/images/Infocascade.png',
     texture: '/assets/projects/infocascade.png',
     spotlight: '/assets/spotlight2.png',

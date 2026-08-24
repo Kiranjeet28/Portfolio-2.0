@@ -115,7 +115,7 @@ export const projects = [
     name: 'InfoCascade',
     description:
       'A centralized digital notice board delivering real-time academic and institutional updates such as exams, results, fees, events, and announcements for 800+ active users.',
-    link: 'https://infocascade.onrender.com/',
+    link: 'https://infocascadebuild.vercel.app/',
   },
   {
     name: 'TyperHouse 0.2 (Phase 2)',
